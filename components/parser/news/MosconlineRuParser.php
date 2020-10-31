@@ -51,7 +51,7 @@ class MosconlineRuParser implements ParserInterface
         $page = new Crawler(Text::decode($html), $url);
 
         $tz = new DateTimeZone('Europe/Moscow');
-        $dt = DateTime::createFromFormat('d.m.Y в H:i', $item->filter('a b span')->text(), $tz);
+        $dt = DateTime::createFromFormat('d.m.y в H:i', $item->filter('a b span')->text(), $tz);
 
         $image = $page->filter('.detail-item img')->first();
 
